@@ -1,7 +1,7 @@
 {
   "name": "cli-reminder",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "bin": {
     "cli-reminder": "bin/main.js"
   },

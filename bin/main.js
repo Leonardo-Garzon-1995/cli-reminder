@@ -1,29 +1,17 @@
 const sound = require("play-sound") ()
-const {displayBanner} = require("../lib/reminder");
+const {displayBanner,} = require("../lib/format");
+const {parseUnit, timeToMillis} = require("../lib/helpers")
 
 const [, , text, num, unit] = process.argv;
-function timeToMillis(num, unit) {
-    switch(unit.toLowerCase()) {
-        case 's':
-            return num * 1000;
-        case 'm':
-            return num * 60000;
-        case 'h':
-            return num * 3600000;
-        case 'd':
-            return num * 86400000;
-        default:
-            throw new Error('Invalid parameter');
-    }
-    
-
-}
 
 function remindme(text) {
+    if (process.argv.length < 5) throw new Error("Invalid parameters");
+
     setTimeout(() => {
         sound.play("./sound2.mp3");
         displayBanner(text);
-    }, timeToMillis(num, unit));
+    }, timeToMillis(num, parseUnit(unit)));
 }
 
 remindme(text);
+
