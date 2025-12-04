@@ -2,7 +2,7 @@ const sound = require("play-sound") ()
 const {displayBanner,} = require("../lib/format");
 const {parseUnit, timeToMillis, getCurrentTime} = require("../lib/helpers")
 
-const [, , command, text, num, unit] = process.argv;
+const [,, command, text, num, unit] = process.argv;
 
 // Set a timer
 function remindme() {

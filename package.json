@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cmd": "node bin/main.js"
+    "remindme": "node bin/main.js"
   },
   "keywords": [
     "reminder",
